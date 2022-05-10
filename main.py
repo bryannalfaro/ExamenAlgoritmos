@@ -5,7 +5,7 @@ import timeit
 
 start_time = timeit.default_timer()
 
-data = range(1, 151)
+data = range(1, 300)
 times = []
 for i in data:
     dac_factorial(i)

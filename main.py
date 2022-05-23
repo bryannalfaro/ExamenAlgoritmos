@@ -2,6 +2,8 @@
 from operator import le
 from algoritmos import *
 import matplotlib.pyplot as plt
+from scipy import stats
+import numpy as np
 import timeit
 import sys
 
@@ -35,4 +37,9 @@ while not max_rem:
 
 # Graficando
 plt.plot(data, times)
+slope, intercept, r_value, p_value, std_err = stats.linregress(data, times)
+line = slope * np.array(data) + intercept
+plt.plot(data, line, 'r-')
+plt.xlabel('N')
+plt.ylabel('Tiempo en segundos')
 plt.show()
